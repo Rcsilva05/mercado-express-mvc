@@ -1,0 +1,31 @@
+PRINTS DE TELA PARA O README
+============================
+
+Salve as capturas de tela nesta pasta com EXATAMENTE estes nomes.
+O README.md ja aponta para eles, entao basta salvar os arquivos aqui
+que as imagens aparecem sozinhas no GitHub.
+
+1. spring-initializr.png
+   Print da tela do start.spring.io com a configuracao e as dependencias
+   selecionadas (Spring Web, Thymeleaf, Spring Security, Spring Data JPA,
+   Validation, Lombok, DevTools, Oracle Driver, H2 Database).
+
+2. tela-listagem.png
+   Pagina http://localhost:8083/produtos com a lista de produtos.
+   Dica: tire um print JA LOGADO, para aparecerem os botoes Editar/Excluir.
+
+3. tela-detalhe.png
+   Pagina de detalhe de um produto (clicar em "Ver").
+
+4. tela-form-criar.png
+   Formulario de cadastro (botao "+ Novo produto"), de preferencia
+   ja preenchido com um produto de exemplo.
+
+5. tela-form-editar.png
+   Formulario de edicao de um produto existente (botao "Editar").
+
+6. tela-login.png
+   Tela de login em http://localhost:8083/login
+
+Formatos aceitos pelo enunciado: .png, .jpg ou .jpeg
+(se salvar como .jpg, lembre de ajustar a extensao no README.md).

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Produto não encontrado · Mercado Express</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="marca" th:href="@{/produtos}">🛒 Mercado Express <span class="tag">MVC</span></a>
+    </header>
+
+    <main class="container">
+        <div class="vazio" style="background:#fff; border-radius:12px; border:1px solid var(--borda); padding:3rem;">
+            <h2 style="color:var(--verde-escuro); margin-top:0;">Produto não encontrado</h2>
+            <p>O produto que você tentou acessar não existe ou já foi removido.</p>
+            <a class="botao botao-primario" th:href="@{/produtos}">Voltar ao catálogo</a>
+        </div>
+    </main>
+</body>
+</html>

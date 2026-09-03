@@ -1,0 +1,26 @@
+CHECKPOINT 4 - PARTE 2 (MVC e Deploy)
+Curso: Tecnologia em Analise e Desenvolvimento de Sistemas (TDS) - FIAP
+Professor: Dr. Marcel Stefan Wagner
+Turma: [PREENCHER COM O CODIGO DA TURMA - ex: 1TDSPY]
+
+INTEGRANTES DO GRUPO:
+Rodrigo Carvalho Silva   - RM: 565162
+Nickolas Davi            - RM: 564105
+Samara Vilela            - RM: 566133
+Natalia Cristina         - RM: 564099
+Otavio Ferreira          - RM: 565960
+
+LINK DO GITHUB DA PARTE 2 (Spring MVC, separado da Parte 1, com o ReadMe do projeto):
+[PREENCHER -> ex: https://github.com/SEU_USUARIO/mercado-express-mvc]
+
+LINK DO GITHUB DA PARTE 1 (API REST, para referencia):
+https://github.com/Rcsilva05/mercado-express-api
+
+LINK DO DEPLOY (colocado tambem no ReadMe do GitHub):
+[PREENCHER APOS O DEPLOY -> ex: https://mercado-express-mvc.onrender.com/produtos]
+
+SISTEMA UTILIZADO PARA O DEPLOY:
+Render (https://render.com) - deploy via Docker
+
+IDE UTILIZADA PARA ELABORACAO DO PROJETO:
+IntelliJ IDEA

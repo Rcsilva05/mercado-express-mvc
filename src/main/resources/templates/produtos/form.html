@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${modoEdicao} ? 'Editar produto · Mercado Express' : 'Novo produto · Mercado Express'">Produto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="marca" th:href="@{/produtos}">🛒 Mercado Express <span class="tag">MVC</span></a>
+        <nav>
+            <span sec:authorize="isAuthenticated()" class="usuario">Olá, <span sec:authentication="name">usuário</span></span>
+            <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post" style="display:inline">
+                <button type="submit" class="botao-sair">Sair</button>
+            </form>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1 th:text="${modoEdicao} ? 'Editar produto' : 'Novo produto'">Produto</h1>
+                <p class="subtitulo">Preencha os dados do produto do mercado express.</p>
+            </div>
+        </div>
+
+        <div class="card-form">
+            <form th:action="${modoEdicao} ? @{/produtos/{id}(id=${produto.id})} : @{/produtos}"
+                  th:object="${produto}" method="post">
+
+                <!-- Mantem o id do produto durante a edicao. Sem este campo, se o
+                     formulario voltasse com erro de validacao, o id se perderia e
+                     o botao de salvar apontaria para uma URL invalida. -->
+                <input type="hidden" th:field="*{id}">
+
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" th:field="*{nome}" placeholder="Ex: Detergente Neutro 500ml" autofocus>
+                    <div class="erro-campo" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="tipo">Tipo</label>
+                    <input type="text" id="tipo" th:field="*{tipo}" placeholder="Ex: Limpeza, Vestuário, Alimento">
+                    <div class="erro-campo" th:if="${#fields.hasErrors('tipo')}" th:errors="*{tipo}"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="setor">Setor</label>
+                    <input type="text" id="setor" th:field="*{setor}" placeholder="Ex: Bazar, Higiene, Hortifruti">
+                    <div class="erro-campo" th:if="${#fields.hasErrors('setor')}" th:errors="*{setor}"></div>
+                </div>
+
+                <div class="campo">
+                    <label for="tamanho">Tamanho</label>
+                    <input type="text" id="tamanho" th:field="*{tamanho}" placeholder="Ex: 500ml, P/M/G, 1kg">
+                </div>
+
+                <div class="campo">
+                    <label for="preco">Preço (R$)</label>
+                    <input type="number" step="0.01" min="0" id="preco" th:field="*{preco}" placeholder="Ex: 12.90">
+                    <div class="erro-campo" th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></div>
+                </div>
+
+                <div class="acoes-form">
+                    <button type="submit" class="botao botao-primario" th:text="${modoEdicao} ? 'Salvar alterações' : 'Cadastrar produto'">Salvar</button>
+                    <a class="botao botao-secundario" th:href="@{/produtos}">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        Checkpoint 4 · Parte 2 (MVC e Deploy) · TDS FIAP
+    </footer>
+</body>
+</html>

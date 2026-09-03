@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${produto.nome} + ' · Mercado Express'">Produto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="marca" th:href="@{/produtos}">🛒 Mercado Express <span class="tag">MVC</span></a>
+        <nav>
+            <span sec:authorize="isAuthenticated()" class="usuario">Olá, <span sec:authentication="name">usuário</span></span>
+            <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post" style="display:inline">
+                <button type="submit" class="botao-sair">Sair</button>
+            </form>
+            <a sec:authorize="isAnonymous()" class="link-entrar" th:href="@{/login}">Entrar</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="cabecalho-pagina">
+            <div>
+                <h1 th:text="${produto.nome}">Nome do produto</h1>
+                <p class="subtitulo">Detalhes do produto cadastrado no mercado express.</p>
+            </div>
+        </div>
+
+        <div class="card-detalhe">
+            <span class="badge-setor" th:text="${produto.setor}">Setor</span>
+
+            <dl>
+                <dt>ID</dt>
+                <dd th:text="${produto.id}">1</dd>
+
+                <dt>Tipo</dt>
+                <dd th:text="${produto.tipo}">Tipo</dd>
+
+                <dt>Tamanho</dt>
+                <dd th:text="${produto.tamanho}">Tamanho</dd>
+
+                <dt>Preço</dt>
+                <dd class="preco" th:text="${'R$ ' + #numbers.formatDecimal(produto.preco, 1, 'POINT', 2, 'COMMA')}">R$ 0,00</dd>
+            </dl>
+
+            <div class="acoes-form">
+                <a class="botao botao-secundario" th:href="@{/produtos}">← Voltar</a>
+                <a sec:authorize="isAuthenticated()" class="botao botao-secundario" th:href="@{/produtos/{id}/editar(id=${produto.id})}">Editar</a>
+                <form sec:authorize="isAuthenticated()" th:action="@{/produtos/{id}/excluir(id=${produto.id})}" method="post"
+                      onsubmit="return confirm('Tem certeza que deseja excluir este produto?');">
+                    <button type="submit" class="botao botao-perigo">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        Checkpoint 4 · Parte 2 (MVC e Deploy) · TDS FIAP
+    </footer>
+</body>
+</html>

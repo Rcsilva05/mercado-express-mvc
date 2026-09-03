@@ -1,0 +1,23 @@
+# Blueprint de deploy para o Render (https://render.com)
+# Checkpoint 4 - Parte 2 (MVC e Deploy) - TDS FIAP
+#
+# Como usar:
+#   1. Suba este repositorio no GitHub.
+#   2. No Render, escolha "New +" -> "Blueprint" e aponte para o repositorio
+#      (o Render detecta este arquivo automaticamente), OU escolha
+#      "New +" -> "Web Service" -> "Docker" e aponte para o Dockerfile.
+#   3. O deploy usa o perfil "h2" (banco em memoria) por padrao, pois o
+#      Oracle ORACLE_FIAP da FIAP so e acessivel de dentro da rede/VPN da
+#      faculdade. Para usar o Oracle real em um ambiente com acesso a essa
+#      rede, defina SPRING_PROFILES_ACTIVE=oracle e as variaveis DB_USER e
+#      DB_PASSWORD no painel do Render (Environment).
+
+services:
+  - type: web
+    name: mercado-express-mvc
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: h2

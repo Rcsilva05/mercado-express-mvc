@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrar · Mercado Express</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="topbar">
+        <a class="marca" th:href="@{/produtos}">🛒 Mercado Express <span class="tag">MVC</span></a>
+    </header>
+
+    <div class="login-wrap">
+        <div class="login-card">
+            <div class="logo">🔐 Área restrita</div>
+            <p class="desc">Entre para cadastrar, editar ou excluir produtos.</p>
+
+            <div class="alerta alerta-erro" th:if="${param.error}">Usuário ou senha inválidos.</div>
+
+            <form th:action="@{/login}" method="post">
+                <div class="campo">
+                    <label for="username">Usuário</label>
+                    <input type="text" id="username" name="username" placeholder="admin" autofocus>
+                </div>
+                <div class="campo">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••">
+                </div>
+                <button type="submit" class="botao botao-primario" style="width:100%; justify-content:center;">Entrar</button>
+            </form>
+
+            <div class="dica-login">
+                Usuário de demonstração: <strong>marcel</strong> / senha: <strong>tranquilo123</strong>
+            </div>
+
+            <div style="margin-top:1rem;">
+                <a th:href="@{/produtos}" style="font-size:0.85rem; color:var(--texto-suave);">← Voltar para o catálogo</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

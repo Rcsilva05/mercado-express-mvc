@@ -1,0 +1,314 @@
+/* ============================================================
+   Mercado Express - estilos gerais
+   Checkpoint 4 - Parte 2 (MVC e Deploy) - TDS FIAP
+   ============================================================ */
+
+:root {
+  --verde-escuro: #1b5e3a;
+  --verde: #2e8b57;
+  --verde-claro: #e8f5ec;
+  --laranja: #e8792e;
+  --texto: #26312c;
+  --texto-suave: #5c6b64;
+  --borda: #dbe6df;
+  --fundo: #f6f8f6;
+  --branco: #ffffff;
+  --vermelho: #c0392b;
+  --sombra: 0 2px 10px rgba(27, 94, 58, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* -------- topbar -------- */
+.topbar {
+  background: linear-gradient(120deg, var(--verde-escuro), var(--verde));
+  color: var(--branco);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--sombra);
+}
+
+.topbar .marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.topbar .marca span.tag {
+  background: var(--laranja);
+  color: var(--branco);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.92rem;
+}
+
+.topbar nav .usuario {
+  background: rgba(255,255,255,0.15);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+.topbar nav .botao-sair {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--branco);
+  font: inherit;
+}
+
+.topbar nav .botao-sair:hover { background: rgba(255,255,255,0.15); }
+
+.topbar nav a.link-entrar {
+  background: var(--laranja);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* -------- container -------- */
+main.container {
+  flex: 1;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.cabecalho-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cabecalho-pagina h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--verde-escuro);
+}
+
+.cabecalho-pagina p.subtitulo {
+  margin: 0.2rem 0 0;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.botao-primario { background: var(--verde); color: var(--branco); }
+.botao-primario:hover { background: var(--verde-escuro); }
+
+.botao-secundario { background: var(--branco); color: var(--verde-escuro); border: 1px solid var(--borda); }
+.botao-secundario:hover { background: var(--verde-claro); }
+
+.botao-perigo { background: var(--branco); color: var(--vermelho); border: 1px solid #f0c4bd; }
+.botao-perigo:hover { background: #fdecea; }
+
+/* -------- alerta -------- */
+.alerta {
+  padding: 0.8rem 1.1rem;
+  border-radius: 8px;
+  margin-bottom: 1.3rem;
+  font-size: 0.92rem;
+}
+.alerta-sucesso { background: var(--verde-claro); color: var(--verde-escuro); border: 1px solid #bfe3cc; }
+.alerta-erro { background: #fdecea; color: var(--vermelho); border: 1px solid #f0c4bd; }
+
+/* -------- tabela de produtos -------- */
+.tabela-wrap {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  border: 1px solid var(--borda);
+}
+
+table.produtos { width: 100%; border-collapse: collapse; }
+
+table.produtos th {
+  text-align: left;
+  background: var(--verde-claro);
+  color: var(--verde-escuro);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.8rem 1rem;
+}
+
+table.produtos td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--borda);
+  font-size: 0.94rem;
+  vertical-align: middle;
+}
+
+table.produtos tr:hover td { background: #fafcfa; }
+
+.badge-setor {
+  background: #eef4ef;
+  color: var(--verde-escuro);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  border: 1px solid var(--borda);
+}
+
+.preco { font-weight: 700; color: var(--verde-escuro); }
+
+.acoes-linha { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.acoes-linha .botao { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
+
+.vazio {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--texto-suave);
+}
+
+/* -------- formulario -------- */
+.card-form {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  border: 1px solid var(--borda);
+  padding: 1.8rem 2rem;
+  max-width: 560px;
+}
+
+.campo { margin-bottom: 1.1rem; }
+.campo label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 0.35rem;
+}
+
+.campo input, .campo select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 0.94rem;
+  font-family: inherit;
+  background: var(--fundo);
+}
+
+.campo input:focus, .campo select:focus {
+  outline: none;
+  border-color: var(--verde);
+  background: var(--branco);
+}
+
+.campo .erro-campo { color: var(--vermelho); font-size: 0.8rem; margin-top: 0.3rem; }
+
+.acoes-form { display: flex; gap: 0.7rem; margin-top: 1.5rem; }
+
+/* -------- detalhe -------- */
+.card-detalhe {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  border: 1px solid var(--borda);
+  padding: 2rem;
+  max-width: 560px;
+}
+
+.card-detalhe dl { display: grid; grid-template-columns: 140px 1fr; row-gap: 0.9rem; margin: 1.4rem 0; }
+.card-detalhe dt { color: var(--texto-suave); font-size: 0.85rem; }
+.card-detalhe dd { margin: 0; font-weight: 600; }
+
+/* -------- login -------- */
+.login-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  background: var(--branco);
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+  border: 1px solid var(--borda);
+  padding: 2.2rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-card .logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--verde-escuro);
+  margin-bottom: 0.2rem;
+}
+
+.login-card p.desc { color: var(--texto-suave); font-size: 0.88rem; margin-top: 0; margin-bottom: 1.5rem; }
+
+.login-card .campo { text-align: left; }
+
+.dica-login {
+  margin-top: 1.3rem;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  background: var(--fundo);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+}
+
+/* -------- footer -------- */
+footer.rodape {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+@media (max-width: 640px) {
+  .topbar { padding: 0.8rem 1.2rem; flex-wrap: wrap; gap: 0.6rem; }
+  table.produtos { font-size: 0.85rem; }
+  .card-form, .card-detalhe { padding: 1.3rem; }
+}
