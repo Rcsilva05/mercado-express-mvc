@@ -9,7 +9,7 @@ Projeto acadêmico desenvolvido para o **Checkpoint 4 — Parte 2 (MVC e Deploy)
 | | |
 |---|---|
 | **Vídeo de demonstração** | `[PREENCHER -> link do vídeo no YouTube (não listado) ou Google Drive]` |
-| **Link de produção (deploy)** | `[PREENCHER -> ex: https://mercado-express-mvc.onrender.com/produtos]` |
+| **Link de produção (deploy)** | `https://mercado-express-mvc-jxxx.onrender.com/produtos` |
 | **Repositório desta Parte (MVC)** | https://github.com/Rcsilva05/mercado-express-mvc |
 | **Repositório da Parte 1 (API)** | https://github.com/Rcsilva05/mercado-express-api |
 
