@@ -8,7 +8,7 @@ Projeto acadêmico desenvolvido para o **Checkpoint 4 — Parte 2 (MVC e Deploy)
 
 | | |
 |---|---|
-| **Vídeo de demonstração** | `[PREENCHER -> link do vídeo no YouTube (não listado) ou Google Drive]` |
+| **Vídeo de demonstração** | https://www.youtube.com/watch?v=_W6nb_9tGHc |
 | **Link de produção (deploy)** | https://mercado-express-mvc-jxxx.onrender.com/produtos |
 | **Repositório desta Parte (MVC)** | https://github.com/Rcsilva05/mercado-express-mvc |
 | **Repositório da Parte 1 (API)** | https://github.com/Rcsilva05/mercado-express-api |
@@ -45,7 +45,7 @@ O tema segue o mesmo da Parte 1: um mercado express que vende produtos como meia
 | Natália Cristina | 564099 |
 | Otávio Ferreira | 565960 |
 
-**Turma:** `[PREENCHER -> ex: 1TDSPY]`
+**Turma:** 2TDSR
 
 ## Tecnologias utilizadas
 
