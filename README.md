@@ -1,17 +1,17 @@
-# 🛒 Mercado Express — MVC (Checkpoint 4, Parte 2)
+# Mercado Express — MVC (Checkpoint 4, Parte 2)
 
 Projeto acadêmico desenvolvido para o **Checkpoint 4 — Parte 2 (MVC e Deploy)** da disciplina de **Tecnologia em Análise e Desenvolvimento de Sistemas (TDS)** na **FIAP**, sob orientação do **Prof. Dr. Marcel Stefan Wagner**.
 
 > Este repositório contém **apenas a Parte 2** do Checkpoint 4 (interface Web / Spring MVC), separada da Parte 1 (API REST), conforme exigido pelo enunciado. O repositório da Parte 1 está em: **https://github.com/Rcsilva05/mercado-express-api**
 
-## 🔗 Links principais
+## Links principais
 
 | | |
 |---|---|
-| 🎥 **Vídeo de demonstração** | `[PREENCHER -> link do vídeo no YouTube (não listado) ou Google Drive]` |
-| 🚀 **Link de produção (deploy)** | `[PREENCHER -> ex: https://mercado-express-mvc.onrender.com/produtos]` |
-| 💻 **Repositório desta Parte (MVC)** | https://github.com/Rcsilva05/mercado-express-mvc |
-| 🔌 **Repositório da Parte 1 (API)** | https://github.com/Rcsilva05/mercado-express-api |
+| **Vídeo de demonstração** | `[PREENCHER -> link do vídeo no YouTube (não listado) ou Google Drive]` |
+| **Link de produção (deploy)** | `[PREENCHER -> ex: https://mercado-express-mvc.onrender.com/produtos]` |
+| **Repositório desta Parte (MVC)** | https://github.com/Rcsilva05/mercado-express-mvc |
+| **Repositório da Parte 1 (API)** | https://github.com/Rcsilva05/mercado-express-api |
 
 ## Sumário
 
@@ -142,25 +142,24 @@ Projeto importado e reconhecido como projeto Maven no IntelliJ IDEA, rodando com
 
 ![Aplicação rodando no IntelliJ](docs/intellij-rodando.png)
 
+### 2. Tela inicial — catálogo de produtos (`/produtos`)
+
+Exibe todos os produtos cadastrados em formato de tabela, com nome, tipo, setor, tamanho e preço. Visitantes não autenticados veem apenas a listagem (somente leitura) e o botão **Entrar**.
+
+![Catálogo de produtos, visão pública](docs/site.png)
+
 ### 3. Tela de login (`/login`)
 
-Formulário de autenticação do Spring Security. Usuário de demonstração:
+Ao clicar em **Entrar**, o usuário chega ao formulário de autenticação do Spring Security. Usuário de demonstração:
 
 ```
 usuário: Marcel
 senha:   tranquilo123
-
-2. Tela inicial — catálogo de produtos (/produtos)
-
-Exibe todos os produtos cadastrados em formato de tabela, com nome, tipo, setor, tamanho e preço. Visitantes não autenticados veem apenas a listagem (somente leitura) e o botão Entrar.
-
-![Catálogo de produtos, visão pública](docs/site.png)
-
 ```
 
 ![Tela de login](docs/tela-login.png)
 
-### 4. Listagem autenticada (`/produtos`)
+### 4. Listagem já autenticado (`/produtos`)
 
 Após o login, a mesma listagem passa a exibir os botões **Editar** e **Excluir** em cada linha, além do botão **+ Novo produto** no topo — controle de acesso do Spring Security em ação (`sec:authorize="isAuthenticated()"`).
 
@@ -221,7 +220,7 @@ O deploy foi feito na plataforma **Render** (https://render.com), via **Docker**
 
 > **Sobre o banco de dados em produção:** o Oracle `ORACLE_FIAP` só é acessível de dentro da rede/VPN da faculdade, então não é alcançável por uma plataforma pública de deploy como o Render. Por isso, o ambiente publicado roda com o **perfil `h2`** (banco em memória, com os mesmos dados de exemplo do `data.sql`), preservando toda a funcionalidade do CRUD e do Spring Security para fins de demonstração. Localmente, ou em qualquer ambiente com acesso à rede da FIAP, a aplicação roda normalmente contra o Oracle real usando o perfil `oracle` (ver [Como rodar localmente](#como-rodar-localmente)).
 
-> O link de produção está destacado no topo deste README, na seção [Links principais](#-links-principais).
+> O link de produção está destacado no topo deste README, na seção [Links principais](#links-principais).
 
 ### Passo a passo do deploy (Render)
 
@@ -237,7 +236,7 @@ O deploy foi feito na plataforma **Render** (https://render.com), via **Docker**
 
 ## Vídeo de demonstração
 
-Vídeo de aproximadamente 5 minutos mostrando as funcionalidades da interface Web (listagem, login, criação, edição e exclusão de produtos) e a aplicação publicada em produção. O link está destacado no topo deste README, na seção [Links principais](#-links-principais).
+Vídeo de aproximadamente 5 minutos mostrando as funcionalidades da interface Web (listagem, login, criação, edição e exclusão de produtos) e a aplicação publicada em produção. O link está destacado no topo deste README, na seção [Links principais](#links-principais).
 
 ## Estrutura do projeto
 
